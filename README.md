@@ -1,4 +1,4 @@
-# vue-admin
+# vue-miracle
 
 > A Vue.js project
 
