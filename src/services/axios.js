@@ -35,6 +35,18 @@ axios.interceptors.request.use(config => {
     config.baseURL = baseUrl;
     config.withCredentials = true;
     config.timeout = 30000;
+    config.transformRequest = [function (data) {
+      console.log(data, 'data');
+      if (!data) return;
+      Object.keys(data).forEach(key => {
+        if (typeof data[key] === 'object') {
+          data[key] = JSON.stringify(data[key]); // 转换为 json 对象
+        }
+      });
+      data = qs.stringify(data);
+      console.log(data, 'data');
+      return data;
+    }];
   }
 
   let token = null;
@@ -82,11 +94,12 @@ error => {
 );
 
 let postFromData = function (url, data = {}, config) {
-  let qsData = '';
-  if (data.constructor === Object) {
-    qsData = qs.stringify(data);
-  }
-  return axios.post(url, qsData, config);
+  // console.log(data, 'data');
+  // let qsData = '';
+  // if (data.constructor === Object) {
+  //   qsData = qs.stringify(data);
+  // }
+  return axios.post(url, data, config);
 };
 
 const getData = function getData (url, data, config) {

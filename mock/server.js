@@ -2,6 +2,7 @@
 
 const jsonServer = require('json-server');
 const bodyParser = require('body-parser');
+const qs = require('qs');
 
 const db = require('./db');
 const routes = require('./routes');
@@ -18,7 +19,9 @@ server.use(bodyParser.urlencoded({ extended: false }))
 
 // post 请求转换成 get 请求
 server.use((request, res, next) => {
-  console.log(request.body, 'request.data');
+  let params = qs.parse(request.body);
+
+  console.log(params, 'request.data');
   request.method = 'GET';
   next();
 });

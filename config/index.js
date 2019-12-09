@@ -11,35 +11,14 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/SmartCc': {
+      '/crm': {
         // target: 'http://172.16.0.45:7300/mock/5bf11fb71d2cb328eddca64f',
         target: 'http://localhost:3000',
         changeOrigin: true,
-        pathRewrite: {
-          '^/SmartCc': ''
-        }
+        // pathRewrite: {
+        //   '^/crm': ''
+        // }
       },
-      '/api': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      },
-      '/wx': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/wx': ''
-        }
-      },
-      '/device': {
-        target: 'http://localhost:3000',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/device': ''
-        }
-      }
     },
 
     // Various Dev Server settings

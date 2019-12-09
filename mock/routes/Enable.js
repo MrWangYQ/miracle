@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-    "/device/enable": "/enable"
+    "/device/enable/list": "/enable"
 }

@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     getData () {
-      postFromData('/device/enable')
+      postFromData('crm/device/enable', {'id': 1, 'value': '哈哈哈', 'data': [{'id': 2, 'value': '哈哈哈'}], 'obj': {'id': '3', 'value': '对象'}})
         .then(({code, data, msg}) => {
           console.log(code, '....', data);
           console.log(msg, '....');
@@ -31,7 +31,7 @@ export default {
         });
     },
     getHistory () {
-      postFromData('/SmartCc/DiySearchHistory')
+      postFromData('crm/SmartCc/DiySearchHistory')
         .then(({code, data, msg}) => {
           console.log(code, '....', data);
           console.log(msg, '....');
