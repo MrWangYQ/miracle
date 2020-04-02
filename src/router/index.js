@@ -16,6 +16,11 @@ export default new Router({
       component: resolve => require(['@/views/login'], resolve)
     },
     {
+      path: '/table',
+      name: 'table',
+      component: resolve => require(['@/views/table'], resolve)
+    },
+    {
       path: '*',
       name: 404,
       component: resolve => require(['@/components/NotFound'], resolve)
