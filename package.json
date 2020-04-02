@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.7.0",
     "js-md5": "^0.7.3",
     "qs": "^6.7.0",
@@ -71,7 +72,11 @@
     "vue-template-compiler": "^2.5.2",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
+<<<<<<< Updated upstream
     "webpack-dev-server": "^3.3.1",
+=======
+    "webpack-dev-server": "^2.11.5",
+>>>>>>> Stashed changes
     "webpack-merge": "^4.1.0"
   },
   "engines": {
